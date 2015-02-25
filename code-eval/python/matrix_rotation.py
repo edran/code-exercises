@@ -1,14 +1,17 @@
 import sys
 import math
-from utils.debug import dprint
-from utils.basic import splitby
 
-vprint = lambda x: dprint(x, False)  # raise debugging
+
+def splitby(list, size):
+    """
+    Split list in n chunks.
+    """
+    return [list[i:i+size] for i in range(0, len(list), size)]
 
 
 def deserialise(matrix):
     dl = len(matrix)
-    l = int(math.sqrt(dl))
+    l = int(math.ceil(math.sqrt(dl)))
     return splitby(matrix, l)
 
 
@@ -29,11 +32,8 @@ for test in test_cases:
     test = test[:-1]
     test = test.split(" ")
     m = deserialise(test)
-    vprint("LOL: " + str(m))
-    rotated = matrix_rotate(m)
-    n = serialise(rotated)
+    n = serialise(matrix_rotate(deserialise(test)))
     s = " ".join(n)
-    print s
-
+    print(s)
 
 test_cases.close()
