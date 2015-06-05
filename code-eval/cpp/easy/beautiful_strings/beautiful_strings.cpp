@@ -42,6 +42,8 @@ int beautiful_strings(string line) {
   int sum = 0;
   for(string::iterator i = line.begin(); i != line.end(); i++)
   {
+    if (!isalpha(*i))
+      continue;
     int index = find(res.begin(), res.end(), *i) - res.begin();
     sum += 26 - index;
   }
