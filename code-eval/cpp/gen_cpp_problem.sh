@@ -34,8 +34,31 @@ cat > $CPP << EOM
 #include <sstream>
 #include <vector>
 #include <stdlib.h>
+#include <cmath>
+#include <algorithm>
+#include <cctype>
 
 using namespace std;
+
+vector<string> split_by_space(string s) {
+  string buf; // Have a buffer string
+  stringstream ss(s); // Insert the string into a stream
+  vector<string> tokens; // Create vector to hold our words
+  while (ss >> buf)
+    tokens.push_back(buf);
+  return tokens;
+}
+
+vector<string> split_by_char(string s, char c) {
+  std::stringstream ss(s);
+  std::string segment;
+  std::vector<std::string> seglist;
+  while(std::getline(ss, segment, c))
+  {
+    seglist.push_back(segment);
+  }
+  return seglist;
+}
 
 string ${NAME}(string* line) {
   // split by whitespace
