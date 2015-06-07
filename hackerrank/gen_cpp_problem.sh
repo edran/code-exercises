@@ -56,7 +56,7 @@ touch $TEST
 
 cat > $MAKEFILE << EOM
 all:
-	g++-4.9 ${NAME}.cpp -o ${NAME}
+	g++-4.9 -std=c++0x ${NAME}.cpp -o ${NAME}
 EOM
 
 
