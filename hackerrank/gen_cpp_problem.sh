@@ -50,6 +50,7 @@ NAME=$2
 MAKEFILE="$THIS_DIR/$NAME/Makefile"
 CPP="$THIS_DIR/$NAME/$NAME.cpp"
 TEST="$THIS_DIR/$NAME/test.txt"
+TEST_FILE="$THIS_DIR/$NAME/test.sh"
 
 mkdir -p "$THIS_DIR/$NAME"
 touch $TEST
@@ -86,7 +87,20 @@ int main() {
 
   return 0;
 }
-
 EOM
+
+cat > $TEST_FILE << EOM
+cat
+#!/bin/bash
+
+if [ -z "$1" ] ; then
+    ./${NAME} < test.txt
+else
+    TEST_F="test_$1.txt"
+    ./${NAME} < $TEST_F
+fi
+EOM
+
+chmod +x $TEST_FILE
 
 exit 0
