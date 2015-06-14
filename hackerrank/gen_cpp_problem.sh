@@ -90,14 +90,13 @@ int main() {
 EOM
 
 cat > $TEST_FILE << EOM
-cat
 #!/bin/bash
 
-if [ -z "$1" ] ; then
+if [ -z "\$1" ] ; then
     ./${NAME} < test.txt
 else
-    TEST_F="test_$1.txt"
-    ./${NAME} < $TEST_F
+    TEST_F="test_\$1.txt"
+    ./${NAME} < \$TEST_F
 fi
 EOM
 
