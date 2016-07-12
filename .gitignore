@@ -1,3 +1,4 @@
+*.exe
 *.pyc
 /code-eval/cpp/easy/swap_numbers/swap_numbers
 /code-eval/cpp/easy/compare_points/compare_points
