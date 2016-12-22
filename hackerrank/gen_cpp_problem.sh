@@ -4,6 +4,8 @@ set -e
 
 if [ $1 == 'algorithms/warmup/' ] ; then
     THIS_DIR="$(pwd)/algorithms/warmup"
+elif [ $1 == 'algorithms/implementation/' ] ; then
+    THIS_DIR="$(pwd)/algorithms/implementation"
 elif [ $1 == 'algorithms/search/' ] ; then
     THIS_DIR="$(pwd)/algorithms/search"
 elif [ $1 == 'algorithms/strings/' ] ; then
