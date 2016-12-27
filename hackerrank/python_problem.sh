@@ -42,6 +42,8 @@ elif [ $1 == 'algorithms/multiple_choice/' ] ; then
     THIS_DIR="$(pwd)/algorithms/multiple_choice"
 elif [ $1 == 'algorithms/data_structures_advanced/' ] ; then
     THIS_DIR="$(pwd)/algorithms/data_structures_advanced"
+elif [ $1 == 'tutorials/ctci/' ] ; then
+    THIS_DIR="$(pwd)/tutorials/ctci"
 else
     echo "Wrong domain. Check the script please!"
     exit 1
@@ -57,9 +59,9 @@ mkdir -p "$THIS_DIR/$NAME"
 touch $TEST
 
 cat > $SOURCE << EOM
-
 def get_args():
   pass
+
 def main():
   a = get_args()
   pass
