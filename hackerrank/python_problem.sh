@@ -60,14 +60,14 @@ touch $TEST
 
 cat > $SOURCE << EOM
 def get_args():
-  pass
+    pass
 
 def main():
-  a = get_args()
-  pass
+    a = get_args()
+    pass
 
 if __name__ == "__main__":
-  main()
+    main()
 EOM
 
 cat > $TEST_FILE << EOM
