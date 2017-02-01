@@ -74,10 +74,10 @@ cat > $TEST_FILE << EOM
 #!/bin/bash
 
 if [ -z "\$1" ] ; then
-    python ${NAME}.py < test.txt
+    python3 ${NAME}.py < test.txt
 else
     TEST_F="test_\$1.txt"
-    python ${NAME}.py < \$TEST_F
+    python3 ${NAME}.py < \$TEST_F
 fi
 EOM
 
